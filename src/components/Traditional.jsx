@@ -5,14 +5,22 @@ Command: npx gltfjsx@6.2.15 public/models/Traditional.gltf
 
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
+import { useCustomization } from "../Contexts/Customization";
 
 export function Traditional_ring(props) {
+  const { material } = useCustomization();
   const { nodes, materials } = useGLTF("./models/Traditional.gltf");
   return (
     <group {...props} dispose={null}>
       <group position={[0, 0.018, 0.001]}>
         <group position={[0, -0.018, -0.001]} scale={11.4}>
           <group rotation={[1.571, 0, 0]} scale={0.01}>
+            {/* materials.metal is the metal part of the ring
+            Material_1 consists of shadows
+            Material_2 makes up the stones of the ring
+            Material_3 is the main stone of the ring  */}
+
+            {/* circular metal part of the ring */}
             <mesh
               geometry={nodes.alliance.geometry}
               material={materials.metal}
@@ -438,6 +446,7 @@ export function Traditional_ring(props) {
               rotation={[Math.PI, -1.466, Math.PI]}
               scale={0.007}
             />
+            {/* metal encasing the main stone of the ring */}
             <mesh
               geometry={nodes.entourage.geometry}
               material={materials.metal}

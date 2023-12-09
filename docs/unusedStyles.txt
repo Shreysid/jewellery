@@ -1,0 +1,22 @@
+##Creating a reflective ground:
+1. Provide a plane geometry of some length and breadth
+2. The MeshReflectorMaterial renders the above object on the plane geometry with the
+provided parameters.
+
+<planeGeometry args={[300, 300]} />  
+            <MeshReflectorMaterial
+              blur={[300, 100]}
+              resolution={2048}
+              mixBlur={1}
+              mixStrength={40}
+              roughness={1}
+              depthScale={1.2}
+              minDepthThreshold={0.4}
+              maxDepthThreshold={1.4}
+              color="#101010"
+              metalness={0.5}
+            />
+
+##Build a fog around the object
+
+<fog attach="fog" args={["#213547", 10, 20]} /> 

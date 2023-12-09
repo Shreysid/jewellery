@@ -1,17 +1,20 @@
 import { Canvas } from "@react-three/fiber";
 import "./App.css";
 import Experience from "./components/Experience";
+import Configurator from "./components/Configurator";
+import { CustomizationProvider } from "./Contexts/Customization";
 
 function App() {
   return (
+    <CustomizationProvider>
     <div className="App">
-      <Canvas camera={{position: [2,2,2], fov:45, near:3, far:3}}>
+      <Canvas camera={{ position: [2, 2, 2], fov: 45, near: 3, far: 3 }}>
         <color attach="background" args={["#213547"]} />
-        {/* <fog attach="fog" args={["#213547", 10, 20]} /> */}
-        {/* color to be used #f7bbbd */}
         <Experience />
       </Canvas>
+      <Configurator/>
     </div>
+    </CustomizationProvider>
   );
 }
 

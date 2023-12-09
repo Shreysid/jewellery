@@ -1,4 +1,50 @@
 .App{
   width : 100vw;
   height : 100vh;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; 
+}
+
+.configurator_section{
+  position: fixed;
+  right: 20px;
+  left: 320px;
+  bottom: 25vh;
+  color: white;
+  padding-left: 690px;
+  padding-bottom: 190px;
+  
+  
+}
+
+.configurator_section_material{
+  padding-bottom: 10px;
+  font-display: 1;
+  
+}
+
+.items{
+  padding-bottom: 10px;
+  font-display: 1;
+}
+
+.item_list{
+  padding-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.item_value:hover{
+  opacity: 0.7;
+  cursor: pointer;
+  transition: 0.4s all;
+}
+
+.item.item-active .item_list{
+  color : white;
 }
