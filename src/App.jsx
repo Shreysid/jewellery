@@ -3,9 +3,11 @@ import "./App.css";
 import Experience from "./components/Experience";
 import Configurator from "./components/Configurator";
 import { CustomizationProvider } from "./Contexts/Customization";
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
+    <Analytics>
     <CustomizationProvider>
     <div className="App">
       <Canvas camera={{ position: [2, 2, 2], fov: 45, near: 3, far: 3 }}>
@@ -15,6 +17,7 @@ function App() {
       <Configurator/>
     </div>
     </CustomizationProvider>
+    </Analytics>
   );
 }
 
