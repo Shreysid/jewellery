@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
 
+//Customization hook to change material
 const CustomizationContext = createContext({});
 
 export const CustomizationProvider = (props) => {

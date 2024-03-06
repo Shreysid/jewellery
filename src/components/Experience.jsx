@@ -5,7 +5,6 @@ import {
   PerspectiveCamera,
 } from "@react-three/drei";
 
-import { useLoader } from "@react-three/fiber";
 import Traditional_ring from "./Traditional";
 
 const Experience = () => {
@@ -21,6 +20,8 @@ const Experience = () => {
         // global
         // zoom={2.5}
         polar={[-0.1, Math.PI / 2]}
+        snap={{ mass: 4, tension: 50 }}
+        // to snap the object back in place
       >
         <Stage environment={"city"} intensity={0.6}>
           <Traditional_ring
@@ -29,9 +30,7 @@ const Experience = () => {
             rotation={[4.7, 0, 0]}
           />
 
-          <mesh rotation={[-Math.PI / 2, 0, 0]}>
-           
-          </mesh>
+          <mesh rotation={[-Math.PI / 2, 0, 0]}></mesh>
         </Stage>
       </PresentationControls>
     </PerspectiveCamera>

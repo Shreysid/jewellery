@@ -6,8 +6,12 @@ Command: npx gltfjsx@6.2.15 public/models/Traditional.gltf
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useCustomization } from "../Contexts/Customization";
+import { MeshStandardMaterial } from "three";
+// import { HexColorPicker } from 'react-colorful'
 
 export function Traditional_ring(props) {
+  // const diamondMaterial = materials.Material_2
+  // const [color, setColor] = useState('white')
   const { material } = useCustomization();
   const { nodes, materials } = useGLTF("./models/Traditional.gltf");
   return (
@@ -27,6 +31,7 @@ export function Traditional_ring(props) {
               position={[0, -2.205, -0.086]}
               scale={0.18}
             />
+
             <mesh
               geometry={nodes.dia001.geometry}
               material={materials.Material_2}
@@ -458,7 +463,10 @@ export function Traditional_ring(props) {
               material={materials.Material_3}
               position={[-0.3, -1.307, 19.923]}
               rotation={[-Math.PI / 2, 0, 0]}
+              // material-color={"blue"}
+              metalness={0.6}
             />
+            {/* <MeshRefractionMaterial color={"blue"} side={THREE.DoubleSide} envMap={env} aberrationStrength={0.02} toneMapped={false} /> */}
           </group>
         </group>
       </group>
